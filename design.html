@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #F6F6F6;
+        }
+
+        button {
+            color: aqua;
+        }
+
+        .flower {
+            margin: 0;
+            padding: 0;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: black;
+            /* Optional: add a background for any empty space */
+        }
+
+        .video-container {
+            position: relative;
+            width: 200%;
+            /* Full viewport width */
+            height: 85vh;
+            /* Automatic height to maintain aspect ratio */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            /* Fit video to the width of the viewport */
+            height: 100%;
+            /* Maintain aspect ratio */
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with 50% transparency */
+            z-index: 1;
+        }
+
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+
+
+        .to-fit {
+            margin-top: -8%;
+            margin-left: 10%;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #F6F6F6;
+            position: absolute;
+            z-index: 5;
+            border-radius: 25px;
+        }
+
+        .custom-box {
+            background-color: white;
+
+            width: 80vw;
+
+            height: 22vh;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            border-radius: 25px;
+
+            box-shadow: 0px 4px 15px rgba(32, 178, 170, 0.6);
+
+
+
+        }
+
+        .status {
+            display: flex;
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+        .D-status {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 47px;
+            font-weight: 250;
+            color: rgba(32, 178, 170, 0.6);
+        }
+
+        .D-status-1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 90;
+            color: rgb(42, 41, 41);
+        }
+
+
+        .bit-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 130px;
+            background-image: url('bit.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+
+
+        .s-head {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .u-head {
+            font-size: 18;
+            font-weight: 500;
+            margin-bottom: 50px;
+            color: rgb(53, 161, 228);
+        }
+
+        .get-directions {
+            font-size: 18;
+            color: rgba(32, 178, 170, 0.6);
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px;
+            font-weight: 600;
+        }
+
+        .get-directions span {
+            font-size: 16;
+            font-weight: 300;
+            color: rgba(32, 178, 170, 0.6);
+        }
+
+
+        .s-para-con {
+            flex: 1;
+            text-align: justify;
+
+
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .bit-details,
+            .s-para-con,
+            .extra_para {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+
+
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .bit-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .s-head,
+            .s-para-con {
+                text-align: center;
+            }
+
+            .u-head {
+                font-size: 1.2rem;
+            }
+
+            .s-para-con p {
+                font-size: 1rem;
+            }
+        }
+
+        .facility-sec {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 100px;
+            height: 90vh;
+            width: 100vw;
+            background-color: white;
+            overflow-y: scroll;
+        }
+
+        .headin-facility {
+            font-size: 18;
+            font-weight: 500;
+            margin-bottom: 50px;
+            color: rgb(53, 161, 228);
+
+        }
+
+        .headin-facility h2 {
+            font-size: 16;
+            font-weight: 400;
+            margin-bottom: 50px;
+            color: rgba(32, 178, 170, 0.6);
+        }
+
+        .facility-dis-up {
+            height: 60vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .facility-dis {
+            height: 35px;
+            width: 40vw;
+            display: flex;
+            flex-direction: row;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 10px;
+            border-color: black;
+            justify-content: space-between;
+
+            align-items: center;
+            /* Center items vertically */
+            gap: 10px;
+
+
+
+
+        }
+
+        .prev-icon,
+        .after-icon {
+            display: inline-flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 35px;
+            width: 35px;
+            background-color: #59e8ceab;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+        }
+
+        .prev-icon img,.after-icon img {
+            width: 100%;
+
+            height: 100%;
+            object-fit: contain;
+            /* Adjust to 'cover' or 'scale-down' if needed */
+        }
+
+
+        .faci-cont {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .extra {
+            height: 110vh;
+            /* Set height to 60% of viewport height */
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: 20px;
+            background-image: url('bg-timg-2.jpeg');
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            box-sizing: border-box;
+
+            color: #060606;
+
+            text-align: center;
+
+        }
+
+        .extra-head h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: bold;
+            color: rgb(4, 4, 4);
+
+        }
+
+        .extra_para p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+            max-width: 800px;
+            color: rgb(6, 6, 6);
+
+        }
+
+        .btn-par {
+            display: flex;
+            justify-content: center;
+
+            gap: 1rem;
+
+        }
+
+        .btn-par .bt-1,
+        .btn-par .bt-2 {
+            background-color: #64e5df;
+
+            color: #0b0b0b;
+
+            padding: 20px 90px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+
+        }
+
+        .btn-par .bt-1:hover,
+        .btn-par .bt-2:hover {
+            background-color: #1388a8;
+
+        }
+
+
+
+
+
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            /* Adjust as needed */
+            margin: auto;
+            overflow: hidden;
+            height: 90vh;
+        }
+
+        .slider {
+            display: flex;
+            gap: 10px;
+            /* Space between images */
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            /* Hide default scrollbar for modern browsers */
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for WebKit browsers */
+        }
+
+        .slider img {
+            width: 200px;
+            /* Adjust image size */
+            height: 150px;
+            /* Adjust image size */
+            object-fit: cover;
+            border-radius: 10px;
+            /* Optional: Rounded corners */
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .left-btn {
+            left: 10px;
+        }
+
+        .right-btn {
+            right: 10px;
+        }
+
+        .scroll-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+
+
+
+
+
+
+
+        .footer {
+            background-color: #06545a;
+            color: #fff;
+            padding: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-section ul li a i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .footer-section ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #00bcd4;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            border-top: 1px solid #555;
+            padding-top: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src=" https://pixabay.com/illustrations/flower-lotus-plant-bloom-blossom-5390711/  " alt="..wait..">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+            aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+            aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas-header">
+                <img src="https://www.istockphoto.com/vector/white-paper-3d-lotus-isolated-on-transparent-background-gm871204132-145350077?utm_source=pixabay&utm_medium=affiliate&utm_campaign=ADP_illustration_sponsored&utm_content=https%3A%2F%2Fpixabay.com%2Fillustrations%2Fflower-lotus-plant-bloom-blossom-5390711%2F&utm_term=flower+lotus"
+                    class="offcanvas-title" id="offcanvasNavbarLabel" alt="...">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Our doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Location</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <div class="flower">
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="lotus.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="overlay"></div>
+
+            <div class="overlay-content">
+                <h1>Lotus Hospital And Pediatric Center </h1>
+                <p>WE are here to care for you and your child , <br> bear the Share of giving the happiness to your
+                    Family</p>
+            </div>
+        </div>
+    </div>
+    <div class="to-fit">
+        <div class="custom-box">
+            <div class="status">
+                <div class="D-status">20+</div>
+                <div class="D-status-1">Doctors</div>
+            </div>
+
+            <div class="status">
+                <div class="D-status">20+</div>
+                <div class="D-status-1">Staff</div>
+            </div>
+            <div class="status">
+                <div class="D-status">50+</div>
+                <div class="D-status-1">Beds</div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bit-details">
+        <div class="s-head ">
+            <h1 class="u-head">Lotus hospital and pediatric <br>
+                center Lucknow</h1>
+            <a href="https://www.google.com/maps/place/Lotus+Hospital/@26.8467,80.9462,17z" target="_blank"
+                target="_blank" class="get-directions">Get Directions <span><i class="fa fa-chevron-circle-right"
+                        aria-hidden="true"></i></span> </a>
+        </div>
+        <div class="s-para-con">
+            <div class="1">
+                <div class="2">
+                    <p>Spread in area of rarity, lotus is one of the largest multi-super-specialty
+                        hospitals in lucknow. Built with the aim to provide highest standard of tertiary
+                        healthcare within the state and to the neighbouring regions, the hospital brings together
+                        internationally acclaimed doctors, exceptionally trained nurses and paramedics, best-in-class
+                        technology and state-of-the-art infrastructure to create an ecosystem of excellence that
+                        delivers world-class, patient-centric, intergrated and affordable healthcare.&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="facility-sec">
+        <div class="headin-facility">
+            Specialities
+            <h2>Ecosystem for Clinical Excellence</h2>
+        </div>
+        <div class="facility-dis-up">
+
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="gs.gif" />
+
+                    </span>
+                    <span>
+                        neuro care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png" alt="nextright-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="maternity-care.png" />
+
+                    </span>
+                    <span>
+                        gynecology
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                         <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+
+
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="baby.png" />
+
+                    </span>
+                    <span>
+                        Pediatric & surgery
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+
+
+
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="kidney.png" />
+
+                    </span>
+                    <span>
+                        Kidney Care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <hr>
+
+
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="gallblader.png" />
+
+                    </span>
+                    <span>
+                        Gallbladder care
+                    </span>
+                </div>
+                <hr>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="medical.png" />
+
+                    </span>
+                    <span>
+                        ENT Care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+                 <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="brain.png" />
+
+                    </span>
+                    <span>
+                        Brain tumer
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="backbone.png" />
+
+                    </span>
+                    <span>
+                        Spine Care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="reproductive-system.png" />
+
+                    </span>
+                    <span>
+                        gynecology disorder
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="health.png" />
+
+                    </span>
+                    <span>
+                        physician care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            <div class="facility-dis">
+                <div class="faci-cont">
+                    <span class="prev-icon">
+                        <img src="neuron.png" />
+
+                    </span>
+                    <span>
+                        neurology Care
+                    </span>
+                </div>
+                <div class="icon-con">
+                    <a href="#">
+                        <span class="after-icon">
+                            <img src="next.png"alt="right-arrow.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+            
+
+
+
+
+        </div>
+    </div>
+
+    <div class="extra">
+        <div class="extra-head">
+            <h3>Doctors, Pioneers, Life Savers</h3>
+        </div>
+        <div class="extra_para">
+            <p>
+                Our superspecialist doctors provide the highest quality of care through a team-based, doctor-led
+                model.
+                Trained at some of the world's most renowned institutions, our highly experienced doctors are
+                distinguished experts in their respective specialities. Our doctors work full-time and exclusively
+                across Medanta hospitals. In addition to offering superspecialised care in their own field, the
+                Medanta
+                organisational structure enables every doctor to help create a culture of collaboration and
+                multispecialty care integration.
+
+        </div>
+        <div class="btn-par">
+            <div class="bt-1">
+                our-doctor
+            </div>
+            <div class="bt-2">
+                contact-us
+            </div>
+        </div>
+    </div>
+
+
+<div>
+    <div class="slider-container">
+        <button class="scroll-btn left-btn" onclick="scrollLeft()">&#10094;</button>
+        <div class="slider">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            
+        </div>
+        
+        <button class="scroll-btn right-btn" onclick="scrollRight()">&#10095;</button>
+    </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="https://www.google.com/maps" target="_blank">Google Map Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <a href="tel:+919876543210" aria-label="Call us">
+                            <i class="fas fa-phone"></i> +91-9876543210
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lotus Hospital and Pediatric Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
