@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Play", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        :root {
+            --primary-color: #71DBB5;
+            --secondary-color: #446DF5;
+            --background-color: #BEBEBE;
+            --text-color: #333;
+        }
+  .navbar-brand img,
+    .offcanvas-header img {
+        height: 50px;
+        width: auto;
+        max-width: 100%;
+    }
+    
+            .ent-int {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                /* Centers horizontally */
+                align-items: center;
+                /* Centers vertically */
+                height: 100vh;
+                /* Takes full screen height */
+                margin-top: 10px;
+            }
+    
+            .ent-int-head {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .ent-int-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 10px;
+            }
+    
+            .ent-int-buttons button {
+                padding: 8px 16px;
+                border: none;
+                background-color: var(--secondary-color);
+                color: white;
+                font-size: 14px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+    
+            .ent-int-buttons button:hover {
+                background-color: var(--primary-color);
+            }
+    
+            .ent-int-img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 80%;
+                width: 70%;
+                margin-top: 30px;
+            }
+    
+            .ent-int-head {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 80%;
+                width: 30%;
+                margin-top: 30px;
+            }
+    
+            @media (max-width: 600px) {
+                .ent-int {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 100px !important;
+    
+                }
+    
+            }
+    
+    
+            /* Optional: Ensure the image fits */
+            .ent-int-img img {
+                max-width: 150%;
+                max-height: 150%;
+                object-fit: contain;
+            }
+    
+            .ent-dis {
+                width: 90%;
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #f8f9fa;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .ent-dis-head {
+                text-align: left;
+                /* Left aligned heading */
+            }
+    
+            .ent-dis-head h2 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+    
+            .ent-dis-content {
+                text-align: right;
+                /* Right aligned paragraph */
+            }
+    
+            .ent-dis-content p {
+                font-size: 16px;
+                color: #555;
+                line-height: 1.6;
+                text-align: justify;
+            }
+    
+            #more-text {
+                display: none;
+            }
+    
+            #toggle-btn {
+                font-size: 16px;
+                font-weight: bold;
+                display: block;
+                margin-top: 10px;
+                text-align: right;
+            }
+    
+            #toggle-btn b {
+                color: seagreen;
+            }
+    
+            #toggle-btn b:hover {
+                text-decoration: underline;
+            }
+    
+            /* Mobile Responsiveness */
+            @media (max-width: 600px) {
+                .ent-dis {
+                    width: 95%;
+                    padding: 15px;
+                }
+    
+                .ent-dis-head h2 {
+                    font-size: 20px;
+                }
+    
+                .ent-dis-content p {
+                    font-size: 14px;
+                }
+            }
+    
+            .dept-doct {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: #f8f9fa;
+                height: 90vh;
+                width: 100vw;
+                margin: auto;
+            }
+    
+            .dept-doc-name {
+                font-size: 18px;
+                font-weight: bold;
+                color: #333;
+                width: 20%;
+                text-align: left;
+            }
+    
+            .dept-doct-pic img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+    
+            .dept-doct-about {
+                font-size: 16px;
+                color: #555;
+                width: 55%;
+                text-align: justify;
+            }
+    
+            /* Mobile Responsiveness */
+            @media (max-width: 768px) {
+                .dept-doct {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+    
+                .dept-doc-name,
+                .dept-doct-about {
+                    width: 100%;
+                }
+    
+                .dept-doct-pic img {
+                    margin: 10px 0;
+                }
+            }
+    
+    
+    
+    
+            .container {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                padding: 10px;
+            }
+    
+            .section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+    
+            /* Left Section (Options) - 20% Width */
+            .options {
+                width: 20%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+    
+            }
+    
+            .options div {
+                padding: 5px;
+                cursor: pointer;
+                text-align: justify;
+                width: 80%;
+            }
+    
+    
+    
+            /* Middle Section (Images) - 40% Width */
+            .images {
+                width: 40%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .images img {
+                width: 80%;
+                height: auto;
+                display: none;
+            }
+    
+            /* Right Section (Paragraphs) - 40% Width */
+            .paragraphs {
+                width: 40%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .paragraphs p {
+                width: 80%;
+                text-align: justify;
+                display: none;
+            }
+    
+    
+            .images img:first-child,
+            .paragraphs p:first-child {
+                display: block;
+            }
+    
+    
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                    height: auto;
+                    align-items: center;
+                }
+    
+                .section {
+                    width: 100%;
+                }
+    
+                .images,
+                .paragraphs {
+                    height: auto;
+                }
+            }
+    
+            .footer {
+                background-color: #06545a;
+                color: #fff;
+                padding: 20px 0;
+                font-family: Arial, sans-serif;
+            }
+    
+            .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: auto;
+                padding: 0 20px;
+            }
+    
+            .footer-section {
+                flex: 1 1 200px;
+                margin: 10px;
+                min-width: 250px;
+            }
+    
+            .footer-section h3 {
+                border-bottom: 2px solid #fff;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+    
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .footer-section ul li {
+                margin: 8px 0;
+            }
+    
+            .footer-section ul li a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+                display: flex;
+                align-items: center;
+            }
+    
+            .footer-section ul li a i {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+    
+            .footer-section ul li a:hover {
+                color: #00bcd4;
+            }
+    
+            .social-media {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+            }
+    
+            .social-media a {
+                color: #fff;
+                font-size: 20px;
+                transition: color 0.3s;
+            }
+    
+            .social-media a:hover {
+                color: #00bcd4;
+            }
+    
+            .footer-bottom {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 14px;
+                border-top: 1px solid #555;
+                padding-top: 10px;
+            }
+    
+            /* Mobile Responsiveness */
+            @media (max-width: 768px) {
+                .footer-container {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+    
+                .footer-section {
+                    margin: 15px 0;
+                }
+            }
+    
+            .offcanvas-header {
+                justify-content: space-around;
+            }
+        </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/logo.png" alt="..wait..">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+            aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+            aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas-header">
+                <img src="../images/logo.png" class="offcanvas-title" id="offcanvasNavbarLabel" alt="loading...">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/doctors.html">Our doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/About-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/location.html">Location</a>
+                    </li>
+
+                    
+                </ul>
+
+            </div>
+        </div>
+        </div>
+    </nav>
+     
+<div class="ent-int">
+    <div class="ent-int-head">
+          <h2>Gynecological disorder <br> department</h2>
+          <div class="ent-int-buttons">
+            <button onclick="window.location.href='../services/location.html'">Contact Us</button>
+            <button onclick="window.location.href='../services/About-us.html'">About Us</button>
+        </div>
+    </div>
+    <div class="ent-int-img">
+        <img src="../images/Gynecological_disor.png" alt="">
+    </div>
+</div>
+<div class="ent-dis">
+    <div class="ent-dis-head">
+        <h2>About Us</h2>
+    </div>
+    <div class="ent-dis-content">
+        <p id="about-text">
+            The Gynecology department at Lotus Hospital is a state-of-the-art facility that integrates advanced medical technology with a team of experienced specialists to provide comprehensive care for a wide range of gynecological conditions. Equipped with cutting-edge technologies such as high-definition laparoscopy, robotic-assisted surgery, 3D/4D ultrasound, and advanced hysteroscopy systems, we ensure precise diagnosis and effective treatment.  
+            <span id="more-text">
+                It is one of the most trusted referral centers in India, specializing in the management of complex gynecological disorders, including endometriosis, fibroids, ovarian cysts, polycystic ovarian syndrome (PCOS), uterine prolapse, and gynecological cancers. Our team is committed to providing personalized, compassionate care tailored to every woman's unique health needs.
+            </span>
+        </p>
+        
+        <span id="toggle-btn" onclick="toggleText()"> 
+            <b style="color: seagreen; cursor: pointer;">Read More ▼</b>
+        </span>
+    </div>
+</div>
+
+
+
+
+<div class="dept-doct">
+    <div class="dept-doc-name">
+        <b>Dr. Priyanka Tiwari (MBBS, DGO)</b>
+    </div>
+    <div class="dept-doct-pic">
+        <img src="../images/df.jpg" alt="Dr. John Doe">
+    </div>
+    <div class="dept-doct-about">
+        <p>Dedicated Obstetrician and Gynecologist Consultant and Surgeon specializing in women's reproductive health, maternity care, and gynecological surgeries. With expertise in high-risk pregnancies, infertility treatments, and minimally invasive procedures, she provides compassionate and personalized care for women at every stage of life.</p>
+    </div>
+</div>
+
+<div class="container">
+   
+    <div class="section options">
+        <div onclick="showContent(1)">Polycystic Ovary Syndrome (PCOS)
+            <hr>
+        </div>
+        <div onclick="showContent(2)">Endometriosis
+            <hr>
+        </div>
+        <div onclick="showContent(3)">Uterine Fibroids
+            <hr>
+        </div>
+    </div>
+
+   
+    <div class="section images">
+        <img id="image1" src="../images/pcos.png" alt="Image 1">
+        <img id="image2" src="../images/endometrium.png" alt="Image 2">
+        <img id="image3" src="..images/fibroisis.png" alt="Image 3">
+    </div>
+
+   
+    <div class="section paragraphs">
+        <p id="para1">PCOS is a hormonal disorder that affects women of reproductive age, leading to irregular periods, excessive hair growth, acne, and weight gain. It occurs due to hormonal imbalances and insulin resistance, causing the ovaries to develop multiple small cysts. PCOS increases the risk of infertility, diabetes, and heart disease. Treatment includes lifestyle changes, weight management, hormonal therapy, and medications like metformin. Early diagnosis helps manage symptoms effectively.</p>
+        <p id="para2">Endometriosis is a condition where tissue similar to the uterine lining grows outside the uterus, leading to severe pelvic pain, painful periods, and infertility. The cause is unclear, but factors like genetics and hormonal imbalances may contribute. It can affect the ovaries, fallopian tubes, and pelvic tissues. Diagnosis is done through ultrasound or laparoscopy. Treatment includes pain management, hormonal therapy, and in severe cases, surgery. Early treatment can prevent complications.</p>
+        <p id="para3">Uterine fibroids are non-cancerous growths in the uterus that can cause heavy menstrual bleeding, pelvic pain, frequent urination, and infertility. They vary in size and can grow inside or outside the uterus. The exact cause is unknown, but hormonal changes and genetic factors play a role. Diagnosis is done through ultrasound or MRI. Treatment options include medications, hormonal therapy, or surgical removal (myomectomy or hysterectomy). Many fibroids are harmless and require only monitoring.</p>
+    </div>
+</div>
+
+
+
+
+    
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../services/About-us.html">About Us</a></li>
+                <li><a href="../services/location.html">Contact Us</a></li>
+                <li><a href="../services/facilities.html">Facilities</a></li>
+                <li><a href="https://www.google.com/maps/place/Lotus+hospital+and+Pediatric+centre/@26.8948044,80.9263154,17z/data=!4m6!3m5!1s0x399957003aa4152f:0x41a7730e28f06c94!8m2!3d26.8948044!4d80.9285041!16s%2Fg%2F11whsd3tz7?entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map Location</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-media">
+                <a href="https://www.facebook.com/people/LOTUS-Hospital/61571904309685/?rdid=IADggVjlI5Ncy5c2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ezfrqu9Ay%2Fhttps://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>
+                    <a href="tel:+918707776568" aria-label="Call us">
+                        <i class="fas fa-phone"></i> +91-8707776568
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Lotus Hospital and Pediatric Center. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+<script>
+    function showContent(index) {
+       
+        document.querySelectorAll('.images img').forEach(img => img.style.display = 'none');
+        document.querySelectorAll('.paragraphs p').forEach(p => p.style.display = 'none');
+
+       
+        document.getElementById('image' + index).style.display = 'block';
+        document.getElementById('para' + index).style.display = 'block';
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        showContent(1);
+    });
+</script>
+<script>
+    function toggleText() {
+    let moreText = document.getElementById("more-text");
+    let btnText = document.getElementById("toggle-btn").querySelector("b");
+
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = "Read Less ▲";
+    } else {
+        moreText.style.display = "none";
+        btnText.innerHTML = "Read More ▼";
+    }
+}
+
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+</html>

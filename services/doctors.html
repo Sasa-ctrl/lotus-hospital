@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: "Play", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+    
+            :root {
+                --primary-color: #71DBB5;
+                --secondary-color: #446DF5;
+                --background-color: #BEBEBE;
+                --text-color: #333;
+            }
+      .navbar-brand img,
+        .offcanvas-header img {
+            height: 50px;
+            width: auto;
+            max-width: 100%;
+        }
+      .extra {
+            height: 110vh;
+          
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: 20px;
+            background: linear-gradient(rgba(30, 47, 50, 0.573), rgba(30, 47, 50, 0.573)), 
+                url('../images/mi.jpg');
+              
+              margin-top: 60px;
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            box-sizing: border-box;
+
+            color: #060606;
+
+            text-align: center;
+
+        }
+
+        .extra-head h3 {
+            font-size: 2rem;
+            margin-top: 30px;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        .extra_para p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+            max-width: 800px;
+            color: white;
+
+        }
+
+        .btn-par {
+            display: flex;
+            justify-content: center;
+
+            gap: 1rem;
+
+        }
+
+        .btn-par .bt-1,
+        .btn-par .bt-2 {
+            background-color: #64e5df;
+
+            color: #0b0b0b;
+
+            padding: 20px 90px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+
+        }
+
+        .btn-par .bt-1:hover,
+        .btn-par .bt-2:hover {
+            background-color: #1388a8;
+
+        }
+        @media (max-width: 768px) {
+            .btn-par{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+
+
+
+
+
+        .scrollable-section {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+
+            scroll-snap-type: x mandatory;
+            background-color: #f8f9fa;
+        }
+
+
+        .det {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+
+            scroll-snap-align: start;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+        }
+
+        .text {
+            text-align: left;
+            padding: 5px;
+            background: white;
+            border-radius: 5px;
+            height: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+
+
+        .scrollable-section::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scrollable-section::-webkit-scrollbar-thumb {
+            background: #fbf9f9;
+            border-radius: 10px;
+        }
+
+        .container h2 {
+            color: rgb(60, 143, 216);
+            text-align: center;
+            justify-content: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .image-container {
+                width: 80vw;
+            }
+
+            .image-container img {
+                height: auto;
+            }
+        }
+
+
+
+
+      .footer {
+    background-color: #06545a;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul li a:hover {
+    color: #00bcd4;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #00bcd4;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 15px 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo.png" alt="..wait..">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+            aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+            aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas-header">
+                <img src="../images/logo.png" class="offcanvas-title" id="offcanvasNavbarLabel" alt="loading...">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="doctors.html">Our doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/About-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../services/location.html">Location</a>
+                    </li>
+
+                    
+                </ul>
+
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+    <div class="extra">
+        <div class="extra-head">
+            <h3>Doctors, Pioneers, Life Savers</h3>
+        </div>
+        <div class="extra_para">
+            <p>
+                Our superspecialist doctors provide the highest quality of care through a team-based, doctor-led
+                model.
+                Trained at some of the world's most renowned institutions, our highly experienced doctors are
+                distinguished experts in their respective specialities. Our doctors work full-time and exclusively
+                across Medanta hospitals. In addition to offering superspecialised care in their own field, the
+                Medanta
+                organisational structure enables every doctor to help create a culture of collaboration and
+                multispecialty care integration.
+
+        </div>
+        <div class="btn-par">
+            <div class="bt-1">
+                <a href="../services/About-us.html" target="_blank" style="text-decoration: none;color: white;">about us</a>
+            </div>
+            <div class="bt-2">
+                <a href="../services/location.html" target="_blank" style="text-decoration: none;color: white;">contact us</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container mt-5">
+        <h2>Our Expert doctors </h2>
+
+
+        <div class="scrollable-section">
+            <div class="det">
+                
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Abhideep Agarwal(MBBS,MS)</h5><br>Dr. Abhideep Agarwal is a renowned ENT specialist with
+                        many years of experience in treating ear, nose, and throat disorders. He specializes in
+                        endoscopic sinus surgery and laser voice surgery.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Ahsan Ajaz (MBBS, DCH, MIAP, MIMA)</h5><br>Highly experienced Pediatrician and
+                        Neonatologist dedicated to providing compassionate and expert care for newborns and children.
+                        With extensive medical expertise, he specializes in child health, growth monitoring, and the
+                        treatment of neonatal and pediatric conditions.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Alok Kumar Pandey (MBBS, MD, DM)</h5><br>Renowned Nephrologist and Kidney Transplant
+                        Specialist dedicated to providing expert care for kidney diseases and transplant patients. With
+                        extensive experience in nephrology, he specializes in advanced dialysis treatments, renal
+                        transplants, and the management of chronic kidney conditions.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Manzoor Ahmad (MBBS, MS)</h5><br> Highly skilled General and Laparoscopic Surgeon with
+                        extensive experience in minimally invasive and open surgical procedures. He specializes in
+                        advanced laparoscopic surgeries, abdominal procedures, and complex surgical treatments, ensuring
+                        precise and effective patient care.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Divakar (MBBS, MS)</h5><br> Skilled Orthopedic Surgeon specializing in the diagnosis and
+                        treatment of bone, joint, and musculoskeletal disorders. With expertise in advanced orthopedic
+                        procedures, including joint replacements and minimally invasive surgeries, he is dedicated to
+                        providing effective and personalized patient care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Tauseef Ahmad (MBBS, MD)</h5><br> Experienced Anesthesiologist specializing in safe and
+                        effective anesthesia management for surgical and critical care procedures. With expertise in
+                        pain management, regional and general anesthesia, he ensures patient comfort and safety during
+                        medical interventions.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/pulak.png">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Pulak Mehrotra (MBBS, MD)</h5><br> Highly skilled Pulmonologist and Chest Disease
+                        Specialist, dedicated to diagnosing and treating respiratory conditions. With expertise in
+                        managing asthma, COPD, lung infections, and critical pulmonary disorders, he provides advanced
+                        and personalized respiratory care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dr himanshu.png">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Himanshu Krishna (MBBS, MS, MCh)</h5><br>Highly skilled Neurosurgeon specializing in
+                        complex brain and spine surgeries. With expertise in minimally invasive neurosurgical
+                        procedures, trauma care, and neuro-oncology, he is committed to delivering advanced and precise
+                        neurological treatments.
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/df.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Neelma Ghatak (MBBS, MS)</h5><br>Experienced Gynecologist specializing in women's
+                        health, maternity care, and advanced gynecological procedures. With expertise in high-risk
+                        pregnancies, infertility treatments, and minimally invasive surgeries, she is dedicated to
+                        providing comprehensive and compassionate care for women's well-being.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5> Dr. Jaynila Bagawade (MBBS, MS, DNM)</h5><br> Highly skilled Urologist and Surgeon
+                        specializing in the diagnosis and treatment of urinary tract disorders. With expertise in
+                        minimally invasive urological surgeries, kidney stone management, and prostate care, she is
+                        dedicated to providing advanced and personalized patient care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Saswat Saxena (MBBS, MD) </h5><br> Dedicated Psychiatrist specializing in the diagnosis
+                        and treatment of mental health disorders. With expertise in depression, anxiety, schizophrenia,
+                        and stress management, he provides compassionate care and personalized treatment plans to
+                        improve mental well-being.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Mafaser Ul Haq (MBBS, DNM) </h5><br> Experienced Anesthesiologist specializing in pain
+                        management and perioperative care. With expertise in general and regional anesthesia, critical
+                        care, and sedation techniques, he ensures patient safety and comfort during surgical and medical
+                        procedures.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Pradeep Joshi (MBBS, MS, MCh) </h5><br> Highly skilled Gastrointestinal Cancer Surgeon
+                        specializing in the surgical treatment of digestive tract cancers. With expertise in advanced
+                        laparoscopic and robotic-assisted procedures, he is dedicated to providing precise and
+                        comprehensive cancer care for better patient outcomes..
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Manoj Shriwastav (MBBS, MS, MCh) </h5><br>Highly experienced Cancer Surgeon specializing
+                        in the surgical management of various cancers. With expertise in advanced oncological procedures
+                        and minimally invasive surgeries, he is committed to providing precise, effective, and
+                        personalized cancer care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5>Dr. Vijyant Devenraj (MBBS, MS, MCh) </h5><br>Skilled Thoracic Surgeon specializing in the
+                        surgical treatment of lung, esophageal, and chest disorders. With expertise in minimally
+                        invasive and advanced thoracic procedures, he is dedicated to providing precise and
+                        comprehensive patient care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/df.jpg">
+                    <div class="text">
+                        <p>
+                        <h5> Dr. Priyanka Tiwari (MBBS, DGO)</h5><br> Dedicated Obstetrician and Gynecologist Consultant
+                        and Surgeon specializing in women's reproductive health, maternity care, and gynecological
+                        surgeries. With expertise in high-risk pregnancies, infertility treatments, and minimally
+                        invasive procedures, she provides compassionate and personalized care for women at every stage
+                        of life.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5> Dr. Saquib Ansari (MBBS, MS, MCh)</h5><br> Skilled Neurosurgeon specializing in brain and
+                        spine surgeries. With expertise in minimally invasive neurosurgical procedures, trauma care, and
+                        neuro-oncology, he is committed to providing advanced and precise neurological treatments for
+                        improved patient outcomes.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5> Dr. Satya Varat Singh (BDS, MDS)</h5><br>Highly skilled Oral and Maxillofacial Surgeon
+                        specializing in facial trauma, jaw reconstruction, and dental surgeries. With expertise in
+                        advanced surgical procedures, including orthognathic surgery and dental implants, he is
+                        committed to providing precise and comprehensive oral and facial care.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../images/dm.jpg">
+                    <div class="text">
+                        <p>
+                        <h5> Dr. Faizan Ahmad (MBBS, MD) </h5><br> Experienced Chest Physician specializing in the
+                        diagnosis and treatment of respiratory diseases. With expertise in managing conditions like
+                        asthma, COPD, tuberculosis, and lung infections, he is dedicated to providing advanced pulmonary
+                        care for improved patient health..
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="About-us.html">About Us</a></li>
+                    <li><a href="location.html">Contact Us</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="https://www.google.com/maps/place/Lotus+hospital+and+Pediatric+centre/@26.8948044,80.9263154,17z/data=!4m6!3m5!1s0x399957003aa4152f:0x41a7730e28f06c94!8m2!3d26.8948044!4d80.9285041!16s%2Fg%2F11whsd3tz7?entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/people/LOTUS-Hospital/61571904309685/?rdid=IADggVjlI5Ncy5c2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ezfrqu9Ay%2Fhttps://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <a href="tel:+918707776568" aria-label="Call us">
+                            <i class="fas fa-phone"></i> +91-8707776568
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lotus Hospital and Pediatric Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+</html>

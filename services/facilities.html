@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lotus Hospital & Pediatric Center | Best Pediatric & Maternity Care in Lucknow</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: "Play", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+    
+            :root {
+                --primary-color: #71DBB5;
+                --secondary-color: #446DF5;
+                --background-color: #BEBEBE;
+                --text-color: #333;
+            }
+      .navbar-brand img,
+        .offcanvas-header img {
+            height: 50px;
+            width: auto;
+            max-width: 100%;
+        }
+      .about-faci {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-faci h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+         .about-section{
+            display:flex;
+            flex-direction: row;
+            margin-top: 50px;
+         }
+
+        .about-img-1 {
+            flex: 1;
+            max-width: 45%;
+
+            text-align: center;
+            order: 2;
+
+            box-sizing: border-box;
+        }
+
+        .about-img-1 img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+
+        }
+
+        .about-theory-1 {
+            flex: 1;
+            max-width: 50%;
+
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+            order: 1;
+
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+
+            }
+
+            .about-img-1,
+            .about-theory-1 {
+                max-width: 100%;
+
+                text-align: center;
+
+                order: unset;
+
+            }
+        }
+        p{
+            
+            text-align: justify;
+        }
+
+
+
+      .about-theory-1 ul li {
+            display: block;
+        }
+
+        .why-choose-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .why-img img {
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .why-text {
+            text-align: justify;
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            .why-choose-us {
+                flex-direction: column;
+                text-align: justify;
+            }
+            .why-img img {
+                width: 100%;
+            }
+            .why-text {
+                text-align: justify;
+            }
+        }
+
+
+      .footer {
+    background-color: #06545a;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul li a:hover {
+    color: #00bcd4;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #00bcd4;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 15px 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/logo.png" alt="..wait..">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+            aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+            aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas-header">
+                <img src="../images/logo.png" class="offcanvas-title" id="offcanvasNavbarLabel" alt="loading...">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services/facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services/doctors.html">Our doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services/About-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services/location.html">Location</a>
+                    </li>
+
+                    
+                </ul>
+
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="about-faci">
+        <h3>Our Specialties</h3>
+        <div class="about-section">
+            <div class="about-img-1">
+                <img src="../images/about us img.jpg" alt="loading....">
+            </div>
+            <div class="about-theory-1">
+                <p>
+                <ul>
+                    <li>Pediatrics & Neonatology</li>
+                    <li>Brain & Spine Surgery</li>
+                    <li>ENT & Head-Neck Surgery</li>
+                    <li>Orthopedics & Joint Replacement</li>
+                    <li>Obstetrics & Gynecology</li>
+                    <li>General & Laparoscopic Surgery</li>
+                    <li>Critical Care & Emergency Services</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="why-choose-us">
+        <div class="why-img">
+            <img src="../images/er-1.jpg" alt="loading....">
+        </div>
+        <div class="why-text">
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>Highly Experienced Doctors – A team of expert specialists dedicated to patient well-being.</li>
+                <li>Cutting-Edge Technology – Equipped with advanced medical facilities for accurate diagnosis and treatment.</li>
+                <li>Patient-Centric Approach – Compassionate care with personalized treatment plans.</li>
+                <li>Affordable Healthcare – Quality medical services at cost-effective pricing.</li>
+                <li>24x7 Emergency Services – Always ready to assist in critical situations.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="services/About-us.html">About Us</a></li>
+                    <li><a href="services/location.html">Contact Us</a></li>
+                    <li><a href="services/facilities.html">Facilities</a></li>
+                    <li><a href="https://www.google.com/maps/place/Lotus+hospital+and+Pediatric+centre/@26.8948044,80.9263154,17z/data=!4m6!3m5!1s0x399957003aa4152f:0x41a7730e28f06c94!8m2!3d26.8948044!4d80.9285041!16s%2Fg%2F11whsd3tz7?entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/people/LOTUS-Hospital/61571904309685/?rdid=IADggVjlI5Ncy5c2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ezfrqu9Ay%2Fhttps://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <a href="tel:+918707776568" aria-label="Call us">
+                            <i class="fas fa-phone"></i> +91-8707776568
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lotus Hospital and Pediatric Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+</html>
